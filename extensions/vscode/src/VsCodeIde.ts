@@ -316,8 +316,7 @@ class VsCodeIde implements IDE {
       version: vscode.version,
       remoteName: vscode.env.remoteName || "local",
       extensionVersion:
-        vscode.extensions.getExtension("continue.continue")?.packageJSON
-          .version,
+        vscode.extensions.getExtension("donglao.donglao")?.packageJSON.version,
     });
   }
 
@@ -335,7 +334,10 @@ class VsCodeIde implements IDE {
     const pathToLastModified: FileStatsMap = {};
     await Promise.all(
       files.map(async (file) => {
-        const stat = await this.ideUtils.stat(vscode.Uri.parse(file), false /* No need to catch ENOPRO exceptions */);
+        const stat = await this.ideUtils.stat(
+          vscode.Uri.parse(file),
+          false /* No need to catch ENOPRO exceptions */,
+        );
         pathToLastModified[file] = {
           lastModified: stat!.mtime,
           size: stat!.size,
@@ -401,7 +403,8 @@ class VsCodeIde implements IDE {
     const configs: ContinueRcJson[] = [];
     for (const workspaceDir of workspaceDirs) {
       const files = await this.ideUtils.readDirectory(workspaceDir);
-      if (files === null) {//Unlikely, but just in case...
+      if (files === null) {
+        //Unlikely, but just in case...
         continue;
       }
       for (const [filename, type] of files) {
@@ -753,7 +756,7 @@ class VsCodeIde implements IDE {
 
   async listDir(dir: string): Promise<[string, FileType][]> {
     const entries = await this.ideUtils.readDirectory(vscode.Uri.parse(dir));
-    return entries === null? [] : entries as any;
+    return entries === null ? [] : (entries as any);
   }
 
   private getIdeSettingsSync(): IdeSettings {

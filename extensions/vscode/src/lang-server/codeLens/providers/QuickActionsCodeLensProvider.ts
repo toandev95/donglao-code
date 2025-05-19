@@ -3,11 +3,11 @@ import { Telemetry } from "core/util/posthog";
 import * as vscode from "vscode";
 
 import { QuickEditShowParams } from "../../../quickEdit/QuickEditQuickPick";
+import { isTutorialFile } from "../../../util/tutorial";
 import {
   CONTINUE_WORKSPACE_KEY,
   getContinueWorkspaceConfig,
 } from "../../../util/workspaceConfig";
-import { isTutorialFile } from "../../../util/tutorial";
 
 export const ENABLE_QUICK_ACTIONS_KEY = "enableQuickActions";
 
@@ -83,7 +83,7 @@ export class QuickActionsCodeLensProvider implements vscode.CodeLensProvider {
   getDefaultCommand(range: vscode.Range): vscode.Command[] {
     const quickEdit: vscode.Command = {
       command: "continue.defaultQuickAction",
-      title: "Continue",
+      title: "Donglao",
       arguments: [{ range } as QuickEditShowParams],
     };
 

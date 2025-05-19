@@ -1,27 +1,17 @@
 {
-  "name": "continue",
+  "name": "donglao",
   "icon": "media/icon.png",
-  "author": "Continue Dev, Inc",
-  "version": "1.1.35",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/continuedev/continue"
-  },
+  "author": "Toan Doan",
+  "version": "1.0.0",
+  "repository": "https://github.com/donglao-ai/donglao-code",
   "extensionKind": [
     "ui",
     "workspace"
   ],
-  "bugs": {
-    "url": "https://github.com/continuedev/continue/issues",
-    "email": "nate@continue.dev"
-  },
-  "homepage": "https://continue.dev",
-  "qna": "https://github.com/continuedev/continue/issues/new/choose",
-  "license": "Apache-2.0",
-  "displayName": "Continue - Codestral, Claude, and more",
+  "displayName": "Donglao Code",
   "pricing": "Free",
   "description": "The leading open-source AI code assistant",
-  "publisher": "Continue",
+  "publisher": "Donglao",
   "engines": {
     "vscode": "^1.70.0",
     "node": ">=20.19.0"
@@ -39,18 +29,6 @@
     "Machine Learning",
     "Snippets"
   ],
-  "keywords": [
-    "chatgpt",
-    "github",
-    "copilot",
-    "claude",
-    "sonnet",
-    "mistral",
-    "codestral",
-    "codegpt",
-    "ai",
-    "llama"
-  ],
   "activationEvents": [
     "onUri",
     "onStartupFinished",
@@ -58,6 +36,15 @@
   ],
   "main": "./out/extension.js",
   "contributes": {
+    "icons": {
+      "donglao-icon": {
+        "description": "Donglao",
+        "default": {
+          "fontPath": "media/donglao.woff",
+          "fontCharacter": "\\E900"
+        }
+      }
+    },
     "languages": [
       {
         "filenames": [
@@ -85,7 +72,7 @@
       }
     ],
     "configuration": {
-      "title": "Continue",
+      "title": "Donglao",
       "properties": {
         "continue.telemetryEnabled": {
           "type": "boolean",
@@ -147,183 +134,183 @@
     "commands": [
       {
         "command": "continue.applyCodeFromChat",
-        "category": "Continue",
+        "category": "Donglao",
         "title": "Apply code from chat",
-        "group": "Continue"
+        "group": "Donglao"
       },
       {
         "command": "continue.acceptDiff",
-        "category": "Continue",
+        "category": "Donglao",
         "title": "Accept Diff",
-        "group": "Continue"
+        "group": "Donglao"
       },
       {
         "command": "continue.rejectDiff",
-        "category": "Continue",
+        "category": "Donglao",
         "title": "Reject Diff",
-        "group": "Continue",
+        "group": "Donglao",
         "icon": "$(stop)"
       },
       {
         "command": "continue.acceptVerticalDiffBlock",
-        "category": "Continue",
+        "category": "Donglao",
         "title": "Accept Vertical Diff Block",
-        "group": "Continue"
+        "group": "Donglao"
       },
       {
         "command": "continue.rejectVerticalDiffBlock",
-        "category": "Continue",
+        "category": "Donglao",
         "title": "Reject Vertical Diff Block",
-        "group": "Continue"
+        "group": "Donglao"
       },
       {
         "command": "continue.focusEdit",
-        "category": "Continue",
+        "category": "Donglao",
         "title": "Generate Code",
-        "group": "Continue"
+        "group": "Donglao"
       },
       {
         "command": "continue.focusContinueInput",
-        "category": "Continue",
+        "category": "Donglao",
         "title": "Add Highlighted Code to Context and Clear Chat",
-        "group": "Continue"
+        "group": "Donglao"
       },
       {
         "command": "continue.focusContinueInputWithoutClear",
-        "category": "Continue",
+        "category": "Donglao",
         "title": "Add Highlighted Code to Context",
-        "group": "Continue"
+        "group": "Donglao"
       },
       {
         "command": "continue.debugTerminal",
-        "category": "Continue",
+        "category": "Donglao",
         "title": "Debug Terminal",
-        "group": "Continue"
+        "group": "Donglao"
       },
       {
         "command": "continue.exitEditMode",
-        "category": "Continue",
+        "category": "Donglao",
         "title": "Exit Edit Mode",
-        "group": "Continue"
+        "group": "Donglao"
       },
       {
         "command": "continue.toggleFullScreen",
-        "category": "Continue",
+        "category": "Donglao",
         "title": "Open in new window",
         "icon": "$(link-external)",
-        "group": "Continue"
+        "group": "Donglao"
       },
       {
         "command": "continue.openConfigPage",
-        "category": "Continue",
+        "category": "Donglao",
         "title": "Open Settings",
         "icon": "$(gear)",
-        "group": "Continue"
+        "group": "Donglao"
       },
       {
         "command": "continue.toggleTabAutocompleteEnabled",
-        "category": "Continue",
+        "category": "Donglao",
         "title": "Toggle Autocomplete Enabled",
-        "group": "Continue"
+        "group": "Donglao"
       },
       {
         "command": "continue.selectFilesAsContext",
-        "category": "Continue",
+        "category": "Donglao",
         "title": "Select Files as Context",
-        "group": "Continue"
+        "group": "Donglao"
       },
       {
         "command": "continue.newSession",
-        "category": "Continue",
+        "category": "Donglao",
         "title": "New Session",
         "icon": "$(add)",
-        "group": "Continue"
+        "group": "Donglao"
       },
       {
         "command": "continue.viewHistory",
-        "category": "Continue",
+        "category": "Donglao",
         "title": "View History",
         "icon": "$(history)",
-        "group": "Continue"
+        "group": "Donglao"
       },
       {
         "command": "continue.viewLogs",
-        "category": "Continue",
+        "category": "Donglao",
         "title": "View History",
-        "group": "Continue"
+        "group": "Donglao"
       },
       {
         "command": "continue.clearConsole",
-        "category": "Continue",
+        "category": "Donglao",
         "title": "Clear Console",
         "icon": "$(clear-all)",
-        "group": "Continue"
+        "group": "Donglao"
       },
       {
         "command": "continue.navigateTo",
-        "category": "Continue",
+        "category": "Donglao",
         "title": "Navigate to a path",
-        "group": "Continue"
+        "group": "Donglao"
       },
       {
         "command": "continue.writeCommentsForCode",
-        "category": "Continue",
+        "category": "Donglao",
         "title": "Write Comments for this Code",
-        "group": "Continue"
+        "group": "Donglao"
       },
       {
         "command": "continue.writeDocstringForCode",
-        "category": "Continue",
+        "category": "Donglao",
         "title": "Write a Docstring for this Code",
-        "group": "Continue"
+        "group": "Donglao"
       },
       {
         "command": "continue.fixCode",
-        "category": "Continue",
+        "category": "Donglao",
         "title": "Fix this Code",
-        "group": "Continue"
+        "group": "Donglao"
       },
       {
         "command": "continue.optimizeCode",
-        "category": "Continue",
+        "category": "Donglao",
         "title": "Optimize this Code",
-        "group": "Continue"
+        "group": "Donglao"
       },
       {
         "command": "continue.fixGrammar",
-        "category": "Continue",
+        "category": "Donglao",
         "title": "Fix Grammar / Spelling",
-        "group": "Continue"
+        "group": "Donglao"
       },
       {
         "command": "continue.codebaseForceReIndex",
-        "category": "Continue",
+        "category": "Donglao",
         "title": "Codebase Force Re-Index",
-        "group": "Continue"
+        "group": "Donglao"
       },
       {
         "command": "continue.rebuildCodebaseIndex",
-        "category": "Continue",
+        "category": "Donglao",
         "title": "Rebuild codebase index",
-        "group": "Continue"
+        "group": "Donglao"
       },
       {
         "command": "continue.docsIndex",
-        "category": "Continue",
+        "category": "Donglao",
         "title": "Docs Index",
-        "group": "Continue"
+        "group": "Donglao"
       },
       {
         "command": "continue.docsReIndex",
-        "category": "Continue",
+        "category": "Donglao",
         "title": "Docs Force Re-Index",
-        "group": "Continue"
+        "group": "Donglao"
       },
       {
         "command": "continue.focusContinueInput",
-        "category": "Continue",
+        "category": "Donglao",
         "title": "Focus Continue Chat",
-        "group": "Continue"
+        "group": "Donglao"
       }
     ],
     "keybindings": [
@@ -415,7 +402,7 @@
     "submenus": [
       {
         "id": "continue.continueSubMenu",
-        "label": "Continue"
+        "label": "Donglao"
       }
     ],
     "menus": {
@@ -445,39 +432,39 @@
       "editor/title/run": [
         {
           "command": "continue.rejectDiff",
-          "group": "Continue",
+          "group": "Donglao",
           "when": "continue.streamingDiff"
         }
       ],
       "continue.continueSubMenu": [
         {
           "command": "continue.focusContinueInputWithoutClear",
-          "group": "Continue",
+          "group": "Donglao",
           "when": "editorHasSelection"
         },
         {
           "command": "continue.writeCommentsForCode",
-          "group": "Continue",
+          "group": "Donglao",
           "when": "editorHasSelection && !editorReadonly"
         },
         {
           "command": "continue.writeDocstringForCode",
-          "group": "Continue",
+          "group": "Donglao",
           "when": "editorHasSelection && !editorReadonly"
         },
         {
           "command": "continue.fixCode",
-          "group": "Continue",
+          "group": "Donglao",
           "when": "editorHasSelection && !editorReadonly"
         },
         {
           "command": "continue.optimizeCode",
-          "group": "Continue",
+          "group": "Donglao",
           "when": "editorHasSelection && !editorReadonly"
         },
         {
           "command": "continue.fixGrammar",
-          "group": "Continue",
+          "group": "Donglao",
           "when": "editorHasSelection && editorLangId == 'markdown' && !editorReadonly"
         }
       ],
@@ -537,7 +524,7 @@
       "activitybar": [
         {
           "id": "continue",
-          "title": "Continue",
+          "title": "Donglao",
           "icon": "media/sidebar-icon.png"
         }
       ],
@@ -554,7 +541,7 @@
         {
           "type": "webview",
           "id": "continue.continueGUIView",
-          "name": "Continue",
+          "name": "Donglao",
           "icon": "media/sidebar-icon.png",
           "visibility": "visible"
         }
@@ -563,7 +550,7 @@
         {
           "type": "webview",
           "id": "continue.continueConsoleView",
-          "name": "Continue Console",
+          "name": "Donglao Console",
           "icon": "$(window)",
           "visibility": "visible",
           "when": "config.continue.enableConsole"

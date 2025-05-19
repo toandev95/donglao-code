@@ -82,6 +82,12 @@ export class ControlPlaneClient {
 
     const env = await getControlPlaneEnv(this.ideSettingsPromise);
     const url = new URL(path, env.CONTROL_PLANE_URL).toString();
+
+    console.log("Request URL:", url);
+    console.log("Request Headers:", {
+      ...init.headers,
+      Authorization: `Bearer ${accessToken}`,
+    });
     const resp = await fetch(url, {
       ...init,
       headers: {
@@ -89,6 +95,8 @@ export class ControlPlaneClient {
         Authorization: `Bearer ${accessToken}`,
       },
     });
+    console.log("Response Status:", resp.status);
+    console.log("Response Body:", await resp.clone().text());
 
     if (!resp.ok) {
       throw new Error(

@@ -47,20 +47,20 @@ const statusBarItemText = (
   error?: boolean,
 ) => {
   if (error) {
-    return "$(alert) Continue (config error)";
+    return "$(alert) Donglao (config error)";
   }
 
   switch (status) {
     case undefined:
       if (loading) {
-        return "$(loading~spin) Continue";
+        return "$(loading~spin) Donglao";
       }
     case StatusBarStatus.Disabled:
-      return "$(circle-slash) Continue";
+      return "$(circle-slash) Donglao";
     case StatusBarStatus.Enabled:
-      return "$(check) Continue";
+      return "$(donglao-icon) Donglao";
     case StatusBarStatus.Paused:
-      return "$(debug-pause) Continue";
+      return "$(debug-pause) Donglao";
   }
 };
 

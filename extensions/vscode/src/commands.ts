@@ -505,7 +505,7 @@ const getCommandsMap: (
       // Create the full screen panel
       let panel = vscode.window.createWebviewPanel(
         "continue.continueGUIView",
-        "Continue",
+        "Donglao",
         vscode.ViewColumn.One,
         {
           retainContextWhenHidden: true,
@@ -573,11 +573,15 @@ const getCommandsMap: (
             await addEntireFileToContext(
               vscode.Uri.parse(fileUri),
               sidebar.webviewProtocol,
-              ide.ideUtils
+              ide.ideUtils,
             );
           }
         } else {
-          await addEntireFileToContext(uri, sidebar.webviewProtocol, ide.ideUtils);
+          await addEntireFileToContext(
+            uri,
+            sidebar.webviewProtocol,
+            ide.ideUtils,
+          );
         }
       }
     },
