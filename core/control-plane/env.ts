@@ -37,8 +37,8 @@ const TEST_ENV: ControlPlaneEnv = {
 };
 
 const LOCAL_ENV: ControlPlaneEnv = {
-  DEFAULT_CONTROL_PLANE_PROXY_URL: "http://localhost:3001/",
-  CONTROL_PLANE_URL: "http://localhost:3001/",
+  DEFAULT_CONTROL_PLANE_PROXY_URL: "http://localhost:3000/api/",
+  CONTROL_PLANE_URL: "http://localhost:3000/api/",
   AUTH_TYPE: AuthType.WorkOsStaging,
   WORKOS_CLIENT_ID: WORKOS_CLIENT_ID_STAGING,
   APP_URL: "http://localhost:3000/",

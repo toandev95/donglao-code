@@ -215,8 +215,8 @@
       },
       {
         "command": "continue.forceAutocomplete",
-        "title": "Continue: Force Autocomplete",
-        "category": "Continue"
+        "title": "Donglao: Force Autocomplete",
+        "category": "Donglao"
       },
       {
         "command": "continue.selectFilesAsContext",
@@ -464,7 +464,7 @@
         },
         {
           "command": "continue.focusEdit",
-          "group": "Continue",
+          "group": "Donglao",
           "when": "editorHasSelection && !editorReadonly"
         },
         {
