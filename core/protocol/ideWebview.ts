@@ -2,12 +2,13 @@ import { ToIdeFromWebviewOrCoreProtocol } from "./ide";
 import { ToWebviewFromIdeOrCoreProtocol } from "./webview";
 
 import {
+  AcceptOrRejectDiffPayload,
   ApplyState,
-  SetCodeToEditPayload,
   HighlightedCodePayload,
   MessageContent,
   RangeInFileWithContents,
-  AcceptOrRejectDiffPayload,
+  SetCodeToEditPayload,
+  ShowFilePayload,
 } from "../";
 
 export type ToIdeFromWebviewProtocol = ToIdeFromWebviewOrCoreProtocol & {
@@ -23,7 +24,7 @@ export type ToIdeFromWebviewProtocol = ToIdeFromWebviewOrCoreProtocol & {
   ];
   overwriteFile: [{ filepath: string; prevFileContent: string | null }, void];
   showTutorial: [undefined, void];
-  showFile: [{ filepath: string }, void];
+  showFile: [ShowFilePayload, void];
   toggleDevTools: [undefined, void];
   reloadWindow: [undefined, void];
   focusEditor: [undefined, void];
@@ -41,9 +42,8 @@ export type ToIdeFromWebviewProtocol = ToIdeFromWebviewOrCoreProtocol & {
       vscMediaUrl: string;
     },
   ];
-  "jetbrains/getColors": [undefined, Record<string, string>];
+  "jetbrains/getColors": [undefined, Record<string, string | null | undefined>];
   "vscode/openMoveRightMarkdown": [undefined, void];
-  setGitHubAuthToken: [{ token: string }, void];
   acceptDiff: [AcceptOrRejectDiffPayload, void];
   rejectDiff: [AcceptOrRejectDiffPayload, void];
   "edit/sendPrompt": [
@@ -76,7 +76,7 @@ export type ToWebviewFromIdeProtocol = ToWebviewFromIdeOrCoreProtocol & {
   setColors: [{ [key: string]: string }, void];
   "jetbrains/editorInsetRefresh": [undefined, void];
   "jetbrains/isOSREnabled": [boolean, void];
-  addApiKey: [undefined, void];
+  setupApiKey: [undefined, void];
   setupLocalConfig: [undefined, void];
   incrementFtc: [undefined, void];
   openOnboardingCard: [undefined, void];

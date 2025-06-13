@@ -92,7 +92,7 @@
         "continue.enableQuickActions": {
           "type": "boolean",
           "default": false,
-          "markdownDescription": "Enable the experimental Quick Actions feature. Read our walkthrough to learn about configuration and how to share feedback: [continue.dev › Walkthrough: Quick Actions (experimental)](https://docs.continue.dev/features/quick-actions)"
+          "markdownDescription": "Enable the experimental Quick Actions feature. Read our walkthrough to learn about configuration and how to share feedback: [continue.dev › Walkthrough: Quick Actions (experimental)](https://docs.continue.dev/customize/deep-dives/vscode-actions#quick-actions)"
         },
         "continue.enableTabAutocomplete": {
           "type": "boolean",
@@ -166,7 +166,7 @@
       {
         "command": "continue.focusEdit",
         "category": "Donglao",
-        "title": "Generate Code",
+        "title": "Edit Highlighted Code",
         "group": "Donglao"
       },
       {
@@ -212,6 +212,11 @@
         "category": "Donglao",
         "title": "Toggle Autocomplete Enabled",
         "group": "Donglao"
+      },
+      {
+        "command": "continue.forceAutocomplete",
+        "title": "Continue: Force Autocomplete",
+        "category": "Continue"
       },
       {
         "command": "continue.selectFilesAsContext",
@@ -311,6 +316,12 @@
         "category": "Donglao",
         "title": "Focus Continue Chat",
         "group": "Donglao"
+      },
+      {
+        "command": "continue.enterEnterpriseLicenseKey",
+        "category": "Donglao",
+        "title": "Enter Enterprise License Key",
+        "group": "Donglao"
       }
     ],
     "keybindings": [
@@ -394,6 +405,12 @@
         "when": "!terminalFocus"
       },
       {
+        "command": "continue.forceAutocomplete",
+        "key": "ctrl+alt+space",
+        "mac": "cmd+alt+space",
+        "when": "editorTextFocus && !editorHasSelection && !editorReadOnly && !inSnippetMode"
+      },
+      {
         "command": "continue.applyCodeFromChat",
         "mac": "alt+a",
         "key": "alt+a"
@@ -421,6 +438,9 @@
         },
         {
           "command": "continue.newSession"
+        },
+        {
+          "command": "continue.enterEnterpriseLicenseKey"
         }
       ],
       "editor/context": [
@@ -441,6 +461,11 @@
           "command": "continue.focusContinueInputWithoutClear",
           "group": "Donglao",
           "when": "editorHasSelection"
+        },
+        {
+          "command": "continue.focusEdit",
+          "group": "Continue",
+          "when": "editorHasSelection && !editorReadonly"
         },
         {
           "command": "continue.writeCommentsForCode",
@@ -618,7 +643,7 @@
   "devDependencies": {
     "@biomejs/biome": "1.6.4",
     "@nestjs/common": "^11.0.16",
-    "@openapitools/openapi-generator-cli": "^2.5.2",
+    "@openapitools/openapi-generator-cli": "^2.20.0",
     "@types/chai": "^5.0.1",
     "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
@@ -648,7 +673,7 @@
   },
   "dependencies": {
     "@continuedev/config-types": "^1.0.14",
-    "@continuedev/fetch": "^1.0.3",
+    "@continuedev/fetch": "^1.0.10",
     "@electron/rebuild": "^3.2.10",
     "@reduxjs/toolkit": "^1.9.3",
     "@types/node-fetch": "^2.6.11",
