@@ -35,7 +35,7 @@ export async function activateExtension(context: vscode.ExtensionContext) {
   }
 
   // Register config.yaml schema by removing old entries and adding new one (uri.fsPath changes with each version)
-  const yamlMatcher = ".continue/**/*.yaml";
+  const yamlMatcher = ".donglao/**/*.yaml";
   const yamlConfig = vscode.workspace.getConfiguration("yaml");
 
   const existingSchemas = yamlConfig.get("schemas") || {};
@@ -71,8 +71,8 @@ export async function activateExtension(context: vscode.ExtensionContext) {
   // or entire extension for testing
   return process.env.NODE_ENV === "test"
     ? {
-        ...continuePublicApi,
-        extension: vscodeExtension,
-      }
+      ...continuePublicApi,
+      extension: vscodeExtension,
+    }
     : continuePublicApi;
 }

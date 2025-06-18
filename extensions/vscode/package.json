@@ -2,16 +2,16 @@
   "name": "donglao",
   "icon": "media/icon.png",
   "author": "Toan Doan",
-  "version": "1.0.0",
-  "repository": "https://github.com/donglao-ai/donglao-code",
+  "version": "1.0.1",
+  "repository": "https://github.com/toandev95/Donglao",
   "extensionKind": [
     "ui",
     "workspace"
   ],
   "displayName": "Donglao Code",
   "pricing": "Free",
-  "description": "The leading open-source AI code assistant",
-  "publisher": "Donglao",
+  "description": "Your AI Pair Programmer, Built by the Community.",
+  "publisher": "toandev95",
   "engines": {
     "vscode": "^1.70.0",
     "node": ">=20.19.0"
@@ -49,7 +49,7 @@
       {
         "filenames": [
           "config.json",
-          ".continuerc.json"
+          ".donglaorc.json"
         ],
         "id": "jsonc"
       },
@@ -584,12 +584,12 @@
     },
     "jsonValidation": [
       {
-        "fileMatch": "**/.continue*/config.json",
+        "fileMatch": "**/.donglao*/config.json",
         "url": "./config_schema.json"
       },
       {
-        "fileMatch": ".continuerc.json",
-        "url": "./continue_rc_schema.json"
+        "fileMatch": ".donglaorc.json",
+        "url": "./donglao_rc_schema.json"
       },
       {
         "fileMatch": "**/config.yaml",

@@ -22,7 +22,7 @@ export function getNonce() {
 }
 
 export function getExtensionUri(): vscode.Uri {
-  return vscode.extensions.getExtension("Donglao.donglao")!.extensionUri;
+  return vscode.extensions.getExtension("toandev95.donglao")!.extensionUri;
 }
 
 export function getViewColumnOfFile(

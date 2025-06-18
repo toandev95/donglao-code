@@ -389,8 +389,8 @@ async function intermediateToFinalConfig({
       (config.contextProviders || [])
         .filter(isContextProviderWithParams)
         .find((cp) => cp.name === "codebase") as
-        | ContextProviderWithParams
-        | undefined
+      | ContextProviderWithParams
+      | undefined
     )?.params || {};
 
   const DEFAULT_CONTEXT_PROVIDERS = [
@@ -977,5 +977,6 @@ export {
   finalToBrowserConfig,
   intermediateToFinalConfig,
   loadContinueConfigFromJson,
-  type BrowserSerializedContinueConfig,
+  type BrowserSerializedContinueConfig
 };
+

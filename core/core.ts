@@ -218,7 +218,7 @@ export class Core {
       this.configHandler,
       ide,
       getLlm,
-      (e) => {},
+      (e) => { },
       (..._) => Promise.resolve([]),
     );
 
@@ -883,15 +883,15 @@ export class Core {
         }
 
         if (
-          uri.endsWith(".continuerc.json") ||
+          uri.endsWith(".donglaorc.json") ||
           uri.endsWith(".prompt") ||
           uri.endsWith(SYSTEM_PROMPT_DOT_FILE) ||
-          (uri.includes(".continue") && uri.endsWith(".yaml")) ||
+          (uri.includes(".donglao") && uri.endsWith(".yaml")) ||
           uri.endsWith(RULES_MARKDOWN_FILENAME)
         ) {
           await this.configHandler.reloadConfig();
         } else if (
-          uri.endsWith(".continueignore") ||
+          uri.endsWith(".donglaoignore") ||
           uri.endsWith(".gitignore")
         ) {
           // Reindex the workspaces

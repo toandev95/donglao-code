@@ -54,14 +54,14 @@ export function OnboardingCardLanding({
       {pastFreeTrialLimit ? (
         <>
           <p className="xs:w-3/4 w-full text-sm">
-            You've reached the free trial limit. Visit the Continue Platform to
+            You've reached the free trial limit. Visit the Donglao Platform to
             select a Coding Assistant.
           </p>
           <Button
             onClick={openPastFreeTrialOnboarding}
             className="mt-4 grid w-full grid-flow-col items-center gap-2"
           >
-            Go to Continue Platform
+            Go to Donglao Platform
           </Button>
         </>
       ) : (
@@ -90,7 +90,7 @@ export function OnboardingCardLanding({
             onClick={onGetStarted}
             className="mt-4 grid w-full grid-flow-col items-center gap-2"
           >
-            Log in to Continue Hub
+            Log in to Donglao Hub
           </Button>
         </>
       )}

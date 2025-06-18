@@ -79,7 +79,7 @@ class DFSWalker {
     private readonly uri: string,
     private readonly ide: IDE,
     private readonly options: WalkerOptions,
-  ) {}
+  ) { }
 
   // walk is a depth-first search implementation
   public async *walk(): AsyncGenerator<string> {
@@ -313,7 +313,7 @@ export async function getIgnoreContext(
   // These are done separately so that .continueignore can override .gitignore
   const gitIgnoreFile = dirFiles.find((name) => name === ".gitignore");
   const continueIgnoreFile = dirFiles.find(
-    (name) => name === ".continueignore",
+    (name) => name === ".donglaoignore",
   );
 
   const getGitIgnorePatterns = async () => {
@@ -325,7 +325,7 @@ export async function getIgnoreContext(
   };
   const getContinueIgnorePatterns = async () => {
     if (continueIgnoreFile) {
-      const contents = await ide.readFile(`${currentDir}/.continueignore`);
+      const contents = await ide.readFile(`${currentDir}/.donglaoignore`);
       return gitIgArrayFromFile(contents);
     }
     return [];

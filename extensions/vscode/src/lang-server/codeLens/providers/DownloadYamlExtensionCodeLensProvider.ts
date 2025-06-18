@@ -1,8 +1,7 @@
 import * as vscode from "vscode";
 
 export class DownloadYamlExtensionCodeLensProvider
-  implements vscode.CodeLensProvider
-{
+  implements vscode.CodeLensProvider {
   private yamlExtensionDownloaded(): boolean {
     const yamlExtension = vscode.extensions.getExtension("redhat.vscode-yaml");
     return yamlExtension !== undefined;
@@ -12,7 +11,7 @@ export class DownloadYamlExtensionCodeLensProvider
     document: vscode.TextDocument,
     _: vscode.CancellationToken,
   ): vscode.CodeLens[] | Thenable<vscode.CodeLens[]> {
-    if (!document.uri.fsPath.includes(".continue")) {
+    if (!document.uri.fsPath.includes(".donglao")) {
       return [];
     }
     if (this.yamlExtensionDownloaded()) {

@@ -14,7 +14,7 @@ export function createRuleFilePath(
   const safeRuleName = sanitizeRuleName(ruleName);
   return joinPathsToUri(
     workspaceDir,
-    ".continue",
+    ".donglao",
     "rules",
     `${safeRuleName}.${RULE_FILE_EXTENSION}`,
   );

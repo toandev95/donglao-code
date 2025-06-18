@@ -13,27 +13,27 @@ const WORKOS_CLIENT_ID_PRODUCTION = "client_01JTZHS78J94FMJRGN9Q20AEA6";
 const WORKOS_CLIENT_ID_STAGING = "client_01JTZHS78J94FMJRGN9Q20AEA6";
 
 const PRODUCTION_HUB_ENV: ControlPlaneEnv = {
-  DEFAULT_CONTROL_PLANE_PROXY_URL: "https://donglao-code.toandev.io.vn/api/",
-  CONTROL_PLANE_URL: "https://donglao-code.toandev.io.vn/api/",
+  DEFAULT_CONTROL_PLANE_PROXY_URL: "https://donglao.toandev.io.vn/api/",
+  CONTROL_PLANE_URL: "https://donglao.toandev.io.vn/api/",
   AUTH_TYPE: AuthType.WorkOsProd,
   WORKOS_CLIENT_ID: WORKOS_CLIENT_ID_PRODUCTION,
-  APP_URL: "https://donglao-code.toandev.io.vn/",
+  APP_URL: "https://donglao.toandev.io.vn/",
 };
 
 const STAGING_ENV: ControlPlaneEnv = {
-  DEFAULT_CONTROL_PLANE_PROXY_URL: "https://donglao-code.toandev.io.vn/api/",
-  CONTROL_PLANE_URL: "https://donglao-code.toandev.io.vn/api/",
+  DEFAULT_CONTROL_PLANE_PROXY_URL: "https://donglao.toandev.io.vn/api/",
+  CONTROL_PLANE_URL: "https://donglao.toandev.io.vn/api/",
   AUTH_TYPE: AuthType.WorkOsStaging,
   WORKOS_CLIENT_ID: WORKOS_CLIENT_ID_STAGING,
-  APP_URL: "https://donglao-code.toandev.io.vn/",
+  APP_URL: "https://donglao.toandev.io.vn/",
 };
 
 const TEST_ENV: ControlPlaneEnv = {
-  DEFAULT_CONTROL_PLANE_PROXY_URL: "https://donglao-code.toandev.io.vn/api/",
-  CONTROL_PLANE_URL: "https://donglao-code.toandev.io.vn/api/",
+  DEFAULT_CONTROL_PLANE_PROXY_URL: "https://donglao.toandev.io.vn/api/",
+  CONTROL_PLANE_URL: "https://donglao.toandev.io.vn/api/",
   AUTH_TYPE: AuthType.WorkOsStaging,
   WORKOS_CLIENT_ID: WORKOS_CLIENT_ID_STAGING,
-  APP_URL: "https://donglao-code.toandev.io.vn/",
+  APP_URL: "https://donglao.toandev.io.vn/",
 };
 
 const LOCAL_ENV: ControlPlaneEnv = {
@@ -66,7 +66,7 @@ export function getControlPlaneEnvSync(
       AUTH_TYPE: AuthType.OnPrem,
       DEFAULT_CONTROL_PLANE_PROXY_URL: apiUrl,
       CONTROL_PLANE_URL: apiUrl,
-      APP_URL: "https://donglao-code.toandev.io.vn/",
+      APP_URL: "https://donglao.toandev.io.vn/",
     };
   }
 

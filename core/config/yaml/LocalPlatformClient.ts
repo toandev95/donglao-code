@@ -15,7 +15,7 @@ export class LocalPlatformClient implements PlatformClient {
     private orgScopeId: string | null,
     private readonly client: ControlPlaneClient,
     private readonly ide: IDE,
-  ) {}
+  ) { }
 
   /**
    * searches for the first valid secret file in order of ~/.continue/.env, <workspace>/.continue/.env, <workspace>/.env
@@ -63,7 +63,7 @@ export class LocalPlatformClient implements PlatformClient {
       for (const folder of workspaceDirs) {
         const envFilePath = joinPathsToUri(
           folder,
-          insideContinue ? ".continue" : "",
+          insideContinue ? ".donglao" : "",
           ".env",
         );
         try {

@@ -44,7 +44,7 @@ fn remove_seps_from_path(dir: &Path) -> String {
 
 fn path_for_tag(tag: &Tag) -> PathBuf {
     let mut path = get_my_home().unwrap().unwrap();
-    path.push(".continue/index/tags");
+    path.push(".donglao/index/tags");
     path.push(remove_seps_from_path(tag.dir));
     path.push(tag.branch);
     path.push(tag.provider_id);
@@ -209,7 +209,7 @@ impl<'a> IndexCache<'a> {
 
     fn provider_dir(provider_id: &str) -> PathBuf {
         let mut path = get_my_home().unwrap().unwrap();
-        path.push(".continue/index/providers");
+        path.push(".donglao/index/providers");
         path.push(provider_id);
         return path;
     }

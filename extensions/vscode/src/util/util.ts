@@ -119,7 +119,7 @@ export function getMetaKeyName() {
 }
 
 export function getExtensionVersion(): string {
-  const extension = vscode.extensions.getExtension("donglao.donglao");
+  const extension = vscode.extensions.getExtension("toandev95.donglao");
   return extension?.packageJSON.version || "0.1.0";
 }
 

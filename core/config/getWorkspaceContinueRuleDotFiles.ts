@@ -1,7 +1,7 @@
 import { ConfigValidationError } from "@continuedev/config-yaml";
 import { IDE, RuleWithSource } from "..";
 import { joinPathsToUri } from "../util/uri";
-export const SYSTEM_PROMPT_DOT_FILE = ".continuerules";
+export const SYSTEM_PROMPT_DOT_FILE = ".donglaorules";
 
 export async function getWorkspaceContinueRuleDotFiles(ide: IDE) {
   const dirs = await ide.getWorkspaceDirs();
@@ -17,7 +17,7 @@ export async function getWorkspaceContinueRuleDotFiles(ide: IDE) {
         rules.push({
           rule: content,
           ruleFile: dotFile,
-          source: ".continuerules",
+          source: ".donglaorules",
         });
       }
     } catch (e) {

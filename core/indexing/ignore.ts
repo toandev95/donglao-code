@@ -67,7 +67,7 @@ export const DEFAULT_IGNORE_FILETYPES = [
   "*.env",
   "*.gitignore",
   "*.gitkeep",
-  "*.continueignore",
+  "*.donglaoignore",
   "config.json",
   "config.yaml",
   "*.csv",
@@ -100,7 +100,7 @@ export const DEFAULT_IGNORE_DIRS = [
   "bin/",
   ".pytest_cache/",
   ".vscode-test/",
-  ".continue/",
+  ".donglao/",
   "__pycache__/",
   "site-packages/",
   ".gradle/",
@@ -137,7 +137,7 @@ export const getWorkspaceContinueIgArray = async (ide: IDE) => {
     async (accPromise, dir) => {
       const acc = await accPromise;
       try {
-        const contents = await ide.readFile(`${dir}/.continueignore`);
+        const contents = await ide.readFile(`${dir}/.donglaoignore`);
         return [...acc, ...gitIgArrayFromFile(contents)];
       } catch (err) {
         console.error(err);

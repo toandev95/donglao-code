@@ -154,7 +154,7 @@ class VsCodeIde implements IDE {
       version: vscode.version,
       remoteName: vscode.env.remoteName || "local",
       extensionVersion:
-        vscode.extensions.getExtension("donglao.donglao")?.packageJSON.version,
+        vscode.extensions.getExtension("toandev95.donglao")?.packageJSON.version,
     });
   }
 
@@ -249,7 +249,7 @@ class VsCodeIde implements IDE {
         if (
           (type === vscode.FileType.File ||
             type === vscode.FileType.SymbolicLink) &&
-          filename === ".continuerc.json"
+          filename === ".donglaorc.json"
         ) {
           const contents = await this.readFile(
             vscode.Uri.joinPath(workspaceDir, filename).toString(),
@@ -440,7 +440,7 @@ class VsCodeIde implements IDE {
 
       // IMPORTANT: findFiles automatically accounts for .gitignore
       const ignoreFiles = await vscode.workspace.findFiles(
-        "**/.continueignore",
+        "**/.donglaoignore",
         null,
       );
 
@@ -511,7 +511,7 @@ class VsCodeIde implements IDE {
           "--iglob",
           pattern,
           "--ignore-file",
-          ".continueignore",
+          ".donglaoignore",
           "--ignore-file",
           ".gitignore",
         ]);
@@ -532,7 +532,7 @@ class VsCodeIde implements IDE {
       const dirResults = await this.runRipgrepQuery(dir, [
         "-i", // Case-insensitive search
         "--ignore-file",
-        ".continueignore",
+        ".donglaoignore",
         "--ignore-file",
         ".gitignore",
         "-C",
@@ -626,3 +626,4 @@ class VsCodeIde implements IDE {
 }
 
 export { VsCodeIde };
+
