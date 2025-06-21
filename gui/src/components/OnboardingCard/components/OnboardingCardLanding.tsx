@@ -7,7 +7,6 @@ import { selectCurrentOrg } from "../../../redux/slices/profilesSlice";
 import { selectFirstHubProfile } from "../../../redux/thunks/selectFirstHubProfile";
 import { hasPassedFTL } from "../../../util/freeTrial";
 import { ToolTip } from "../../gui/Tooltip";
-import ContinueLogo from "../../svg/ContinueLogo";
 import { useOnboardingCard } from "../hooks/useOnboardingCard";
 
 export function OnboardingCardLanding({
@@ -48,7 +47,8 @@ export function OnboardingCardLanding({
   return (
     <div className="xs:px-0 flex w-full max-w-full flex-col items-center justify-center px-4 text-center">
       <div className="xs:flex hidden">
-        <ContinueLogo height={75} />
+        {/* <ContinueLogo height={75} /> */}
+        <div className="py-4 text-3xl font-bold">Donglao Code</div>
       </div>
 
       {pastFreeTrialLimit ? (

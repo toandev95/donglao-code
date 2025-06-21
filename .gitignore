@@ -141,7 +141,7 @@ continue_server.dist
 Icon
 Icon?
 
-.continuerc.json
+.donglaorc.json
 .aider*
 
 *.notes.md
@@ -149,7 +149,7 @@ notes.md
 *.notes.md
 
 manual-testing-sandbox/.idea/**
-manual-testing-sandbox/.continue/**
+manual-testing-sandbox/.donglao/**
 extensions/intellij/.idea/**
 
 **/.idea/workspace.xml
@@ -160,13 +160,13 @@ extensions/intellij/.idea/**
 
 
 extensions/intellij/bin
-extensions/.continue-debug/
+extensions/.donglao-debug/
 
 *.vsix
 
 # intellij module library files
 *.iml
 
-.continuerules
-**/.continue/assistants/
+.donglaorules
+**/.donglao/assistants/
 keys

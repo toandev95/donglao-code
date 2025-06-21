@@ -2,8 +2,9 @@
   "name": "donglao",
   "icon": "media/icon.png",
   "author": "Toan Doan",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "repository": "https://github.com/toandev95/Donglao",
+  "homepage": "https://donglao.io.vn",
   "extensionKind": [
     "ui",
     "workspace"
@@ -314,7 +315,7 @@
       {
         "command": "continue.focusContinueInput",
         "category": "Donglao",
-        "title": "Focus Continue Chat",
+        "title": "Focus Donglao Chat",
         "group": "Donglao"
       },
       {

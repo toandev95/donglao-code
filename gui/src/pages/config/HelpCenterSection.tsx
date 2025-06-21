@@ -23,20 +23,20 @@ export function HelpCenterSection() {
       <h3 className="mb-4 mt-0 text-xl">Help center</h3>
       <div className="-mx-4 flex flex-col">
         <MoreHelpRow
-          title="Continue Hub"
-          description="Visit hub.continue.dev to explore custom assistants and blocks"
+          title="Donglao Hub"
+          description="Visit code.donglao.io.vn/hub to explore custom assistants and blocks"
           Icon={ArrowTopRightOnSquareIcon}
           onClick={() =>
-            ideMessenger.post("openUrl", "https://hub.continue.dev/")
+            ideMessenger.post("openUrl", "https://code.donglao.io.vn/hub")
           }
         />
 
         <MoreHelpRow
           title="Documentation"
-          description="Learn how to configure and use Continue"
+          description="Learn how to configure and use Donglao Code"
           Icon={ArrowTopRightOnSquareIcon}
           onClick={() =>
-            ideMessenger.post("openUrl", "https://docs.continue.dev/")
+            ideMessenger.post("openUrl", "https://code.donglao.io.vn/docs")
           }
         />
 
@@ -47,19 +47,19 @@ export function HelpCenterSection() {
           onClick={() =>
             ideMessenger.post(
               "openUrl",
-              "https://github.com/continuedev/continue/issues/new/choose",
+              "https://github.com/toandev95/Donglao/issues/new/choose",
             )
           }
         />
 
-        <MoreHelpRow
+        {/* <MoreHelpRow
           title="Join the community!"
           description="Join us on Discord to stay up-to-date on the latest developments"
           Icon={ArrowTopRightOnSquareIcon}
           onClick={() =>
             ideMessenger.post("openUrl", "https://discord.gg/vapESyrFmJ")
           }
-        />
+        /> */}
 
         <MoreHelpRow
           title="Token usage"
