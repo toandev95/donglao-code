@@ -83,7 +83,7 @@ export function getDotContinueSubDirs(
   // Workspace .continue/<subDirName>
   if (options.includeWorkspace) {
     fullDirs = workspaceDirs.map((dir) =>
-      joinPathsToUri(dir, ".continue", subDirName),
+      joinPathsToUri(dir, ".donglao", subDirName),
     );
   }
 
