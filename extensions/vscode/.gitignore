@@ -4,7 +4,7 @@ out/
 .vscode-test/
 data/
 src/client
-.continue
+.donglao
 
 exe
 bin
@@ -15,7 +15,7 @@ gui/**
 .devcontainer
 .github
 
-continue_rc_schema.json
+donglao_rc_schema.json
 
 e2e/_output
 e2e/.test-extensions

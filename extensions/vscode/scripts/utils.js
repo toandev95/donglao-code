@@ -36,7 +36,7 @@ function copyConfigSchema() {
     "x-intellij-html-description":
       "<p>If set to <code>merge</code>, <code>.continuerc.json</code> will be applied on top of <code>config.json</code> (arrays and objects are merged). If set to <code>overwrite</code>, then every top-level property of <code>.continuerc.json</code> will overwrite that property from <code>config.json</code>.</p>",
   };
-  fs.writeFileSync("continue_rc_schema.json", JSON.stringify(schema, null, 2));
+  fs.writeFileSync("donglao_rc_schema.json", JSON.stringify(schema, null, 2));
 
   // Copy config schemas to intellij
   fs.copyFileSync(
@@ -51,14 +51,14 @@ function copyConfigSchema() {
     ),
   );
   fs.copyFileSync(
-    "continue_rc_schema.json",
+    "donglao_rc_schema.json",
     path.join(
       "..",
       "intellij",
       "src",
       "main",
       "resources",
-      "continue_rc_schema.json",
+      "donglao_rc_schema.json",
     ),
   );
 }
