@@ -4,7 +4,8 @@ import { getConfigYamlPath } from "core/util/paths";
 import * as vscode from "vscode";
 
 export class ConfigJsonConverterCodeLensProvider
-  implements vscode.CodeLensProvider {
+  implements vscode.CodeLensProvider
+{
   public provideCodeLenses(
     document: vscode.TextDocument,
     _: vscode.CancellationToken,
@@ -23,7 +24,7 @@ export class ConfigJsonConverterCodeLensProvider
     return [
       new vscode.CodeLens(new vscode.Range(0, 0, 0, 0), {
         title: "config.json is being deprecated. Convert to config.yaml",
-        command: "continue.convertConfigJsonToConfigYaml",
+        command: "donglao.convertConfigJsonToConfigYaml",
       }),
     ];
   }

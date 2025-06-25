@@ -134,7 +134,7 @@ export class VerticalDiffManager {
 
     this.disableDocumentChangeListener();
 
-    vscode.commands.executeCommand("setContext", "continue.diffVisible", false);
+    vscode.commands.executeCommand("setContext", "donglao.diffVisible", false);
   }
 
   async acceptRejectVerticalDiffBlock(
@@ -192,7 +192,7 @@ export class VerticalDiffManager {
     streamId: string,
     toolCallId?: string,
   ) {
-    vscode.commands.executeCommand("setContext", "continue.diffVisible", true);
+    vscode.commands.executeCommand("setContext", "donglao.diffVisible", true);
 
     // Get the current editor fileUri/range
     let editor = vscode.window.activeTextEditor;
@@ -245,11 +245,7 @@ export class VerticalDiffManager {
       );
     }
 
-    vscode.commands.executeCommand(
-      "setContext",
-      "continue.streamingDiff",
-      true,
-    );
+    vscode.commands.executeCommand("setContext", "donglao.streamingDiff", true);
 
     try {
       this.logDiffs = await diffHandler.run(diffStream);
@@ -269,7 +265,7 @@ export class VerticalDiffManager {
     } finally {
       vscode.commands.executeCommand(
         "setContext",
-        "continue.streamingDiff",
+        "donglao.streamingDiff",
         false,
       );
     }
@@ -296,7 +292,7 @@ export class VerticalDiffManager {
     toolCallId?: string;
     rulesToInclude: undefined | RuleWithSource[];
   }): Promise<string | undefined> {
-    vscode.commands.executeCommand("setContext", "continue.diffVisible", true);
+    vscode.commands.executeCommand("setContext", "donglao.diffVisible", true);
 
     let editor = vscode.window.activeTextEditor;
 
@@ -430,11 +426,7 @@ export class VerticalDiffManager {
       );
     }
 
-    vscode.commands.executeCommand(
-      "setContext",
-      "continue.streamingDiff",
-      true,
-    );
+    vscode.commands.executeCommand("setContext", "donglao.streamingDiff", true);
 
     this.editDecorationManager.clear();
 
@@ -472,7 +464,7 @@ export class VerticalDiffManager {
       this.enableDocumentChangeListener();
 
       if (abortController.signal.aborted) {
-        vscode.commands.executeCommand("continue.rejectDiff");
+        vscode.commands.executeCommand("donglao.rejectDiff");
       }
 
       return `${prefix}${streamedLines.join("\n")}${suffix}`;
@@ -489,7 +481,7 @@ export class VerticalDiffManager {
     } finally {
       vscode.commands.executeCommand(
         "setContext",
-        "continue.streamingDiff",
+        "donglao.streamingDiff",
         false,
       );
     }

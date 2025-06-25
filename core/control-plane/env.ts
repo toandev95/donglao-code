@@ -7,7 +7,7 @@ import {
 import { AuthType, ControlPlaneEnv } from "./AuthTypes";
 import { getLicenseKeyData } from "./mdm/mdm";
 
-export const EXTENSION_NAME = "continue";
+export const EXTENSION_NAME = "donglao";
 
 const WORKOS_CLIENT_ID_PRODUCTION = "client_01JTZHS78J94FMJRGN9Q20AEA6";
 const WORKOS_CLIENT_ID_STAGING = "client_01JTZHS78J94FMJRGN9Q20AEA6";

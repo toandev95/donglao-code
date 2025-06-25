@@ -19,7 +19,7 @@ class ContinueQuickFixProvider implements vscode.CodeActionProvider {
     const diagnostic = context.diagnostics[0];
 
     const quickFix = new vscode.CodeAction(
-      "Ask Continue",
+      "Ask Donglao",
       vscode.CodeActionKind.QuickFix,
     );
 
@@ -33,8 +33,8 @@ class ContinueQuickFixProvider implements vscode.CodeActionProvider {
     );
 
     quickFix.command = {
-      command: "continue.quickFix",
-      title: "Continue Quick Fix",
+      command: "donglao.quickFix",
+      title: "Donglao Quick Fix",
       arguments: [surroundingRange, diagnostic.message],
     };
 

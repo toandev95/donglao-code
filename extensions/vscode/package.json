@@ -2,7 +2,7 @@
   "name": "donglao",
   "icon": "media/icon.png",
   "author": "Toan Doan",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "repository": "https://github.com/toandev95/Donglao",
   "homepage": "https://donglao.io.vn",
   "extensionKind": [
@@ -33,7 +33,7 @@
   "activationEvents": [
     "onUri",
     "onStartupFinished",
-    "onView:continueGUIView"
+    "onView:donglaoGUIView"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -75,57 +75,57 @@
     "configuration": {
       "title": "Donglao",
       "properties": {
-        "continue.telemetryEnabled": {
+        "donglao.telemetryEnabled": {
           "type": "boolean",
           "default": true,
-          "markdownDescription": "Continue collects anonymous usage data, cleaned of PII, to help us improve the product for our users. Read more  at [continue.dev › Telemetry](https://docs.continue.dev/telemetry)."
+          "markdownDescription": "Donglao collects anonymous usage data, cleaned of PII, to help us improve the product for our users."
         },
-        "continue.showInlineTip": {
+        "donglao.showInlineTip": {
           "type": "boolean",
           "default": true,
-          "description": "Show inline suggestion to use the Continue keyboard shortcuts (e.g. \"Cmd/Ctrl L to select code, Cmd/Ctrl I to edit\")."
+          "description": "Show inline suggestion to use the Donglao keyboard shortcuts (e.g. \"Cmd/Ctrl L to select code, Cmd/Ctrl I to edit\")."
         },
-        "continue.disableQuickFix": {
+        "donglao.disableQuickFix": {
           "type": "boolean",
           "default": false,
           "description": "Disable the quick fix feature."
         },
-        "continue.enableQuickActions": {
+        "donglao.enableQuickActions": {
           "type": "boolean",
           "default": false,
-          "markdownDescription": "Enable the experimental Quick Actions feature. Read our walkthrough to learn about configuration and how to share feedback: [continue.dev › Walkthrough: Quick Actions (experimental)](https://docs.continue.dev/customize/deep-dives/vscode-actions#quick-actions)"
+          "markdownDescription": "Enable the experimental Quick Actions feature."
         },
-        "continue.enableTabAutocomplete": {
+        "donglao.enableTabAutocomplete": {
           "type": "boolean",
           "default": true,
-          "markdownDescription": "Enable Continue's tab autocomplete feature. Read our walkthrough to learn about configuration and how to share feedback: [continue.dev › Walkthrough: Tab Autocomplete (beta)](https://docs.continue.dev/features/tab-autocomplete)"
+          "markdownDescription": "Enable Donglao's tab autocomplete feature."
         },
-        "continue.pauseTabAutocompleteOnBattery": {
+        "donglao.pauseTabAutocompleteOnBattery": {
           "type": "boolean",
           "default": false,
-          "markdownDescription": "Pause Continue's tab autocomplete feature when your battery is low."
+          "markdownDescription": "Pause Donglao's tab autocomplete feature when your battery is low."
         },
-        "continue.pauseCodebaseIndexOnStart": {
+        "donglao.pauseCodebaseIndexOnStart": {
           "type": "boolean",
           "default": false,
-          "markdownDescription": "Pause Continue's codebase index on start."
+          "markdownDescription": "Pause Donglao's codebase index on start."
         },
-        "continue.enableConsole": {
+        "donglao.enableConsole": {
           "type": "boolean",
           "default": false,
           "markdownDescription": "Enable a console to log and explore model inputs and outputs. It can be found in the bottom panel."
         },
-        "continue.remoteConfigServerUrl": {
+        "donglao.remoteConfigServerUrl": {
           "type": "string",
           "default": null,
           "markdownDescription": "If your team is set up to use shared configuration, enter the server URL here and your user token below to enable automatic syncing."
         },
-        "continue.userToken": {
+        "donglao.userToken": {
           "type": "string",
           "default": null,
           "markdownDescription": "If your team is set up to use shared configuration, enter your user token here and your server URL above to enable automatic syncing."
         },
-        "continue.remoteConfigSyncPeriod": {
+        "donglao.remoteConfigSyncPeriod": {
           "type": "number",
           "default": 60,
           "description": "The period of time in minutes between automatic syncs."
@@ -134,192 +134,192 @@
     },
     "commands": [
       {
-        "command": "continue.applyCodeFromChat",
+        "command": "donglao.applyCodeFromChat",
         "category": "Donglao",
         "title": "Apply code from chat",
         "group": "Donglao"
       },
       {
-        "command": "continue.acceptDiff",
+        "command": "donglao.acceptDiff",
         "category": "Donglao",
         "title": "Accept Diff",
         "group": "Donglao"
       },
       {
-        "command": "continue.rejectDiff",
+        "command": "donglao.rejectDiff",
         "category": "Donglao",
         "title": "Reject Diff",
         "group": "Donglao",
         "icon": "$(stop)"
       },
       {
-        "command": "continue.acceptVerticalDiffBlock",
+        "command": "donglao.acceptVerticalDiffBlock",
         "category": "Donglao",
         "title": "Accept Vertical Diff Block",
         "group": "Donglao"
       },
       {
-        "command": "continue.rejectVerticalDiffBlock",
+        "command": "donglao.rejectVerticalDiffBlock",
         "category": "Donglao",
         "title": "Reject Vertical Diff Block",
         "group": "Donglao"
       },
       {
-        "command": "continue.focusEdit",
+        "command": "donglao.focusEdit",
         "category": "Donglao",
         "title": "Edit Highlighted Code",
         "group": "Donglao"
       },
       {
-        "command": "continue.focusContinueInput",
+        "command": "donglao.focusDonglaoInput",
         "category": "Donglao",
         "title": "Add Highlighted Code to Context and Clear Chat",
         "group": "Donglao"
       },
       {
-        "command": "continue.focusContinueInputWithoutClear",
+        "command": "donglao.focusDonglaoInputWithoutClear",
         "category": "Donglao",
         "title": "Add Highlighted Code to Context",
         "group": "Donglao"
       },
       {
-        "command": "continue.debugTerminal",
+        "command": "donglao.debugTerminal",
         "category": "Donglao",
         "title": "Debug Terminal",
         "group": "Donglao"
       },
       {
-        "command": "continue.exitEditMode",
+        "command": "donglao.exitEditMode",
         "category": "Donglao",
         "title": "Exit Edit Mode",
         "group": "Donglao"
       },
       {
-        "command": "continue.toggleFullScreen",
+        "command": "donglao.toggleFullScreen",
         "category": "Donglao",
         "title": "Open in new window",
         "icon": "$(link-external)",
         "group": "Donglao"
       },
       {
-        "command": "continue.openConfigPage",
+        "command": "donglao.openConfigPage",
         "category": "Donglao",
         "title": "Open Settings",
         "icon": "$(gear)",
         "group": "Donglao"
       },
       {
-        "command": "continue.toggleTabAutocompleteEnabled",
+        "command": "donglao.toggleTabAutocompleteEnabled",
         "category": "Donglao",
         "title": "Toggle Autocomplete Enabled",
         "group": "Donglao"
       },
       {
-        "command": "continue.forceAutocomplete",
+        "command": "donglao.forceAutocomplete",
         "title": "Donglao: Force Autocomplete",
         "category": "Donglao"
       },
       {
-        "command": "continue.selectFilesAsContext",
+        "command": "donglao.selectFilesAsContext",
         "category": "Donglao",
         "title": "Select Files as Context",
         "group": "Donglao"
       },
       {
-        "command": "continue.newSession",
+        "command": "donglao.newSession",
         "category": "Donglao",
         "title": "New Session",
         "icon": "$(add)",
         "group": "Donglao"
       },
       {
-        "command": "continue.viewHistory",
+        "command": "donglao.viewHistory",
         "category": "Donglao",
         "title": "View History",
         "icon": "$(history)",
         "group": "Donglao"
       },
       {
-        "command": "continue.viewLogs",
+        "command": "donglao.viewLogs",
         "category": "Donglao",
         "title": "View History",
         "group": "Donglao"
       },
       {
-        "command": "continue.clearConsole",
+        "command": "donglao.clearConsole",
         "category": "Donglao",
         "title": "Clear Console",
         "icon": "$(clear-all)",
         "group": "Donglao"
       },
       {
-        "command": "continue.navigateTo",
+        "command": "donglao.navigateTo",
         "category": "Donglao",
         "title": "Navigate to a path",
         "group": "Donglao"
       },
       {
-        "command": "continue.writeCommentsForCode",
+        "command": "donglao.writeCommentsForCode",
         "category": "Donglao",
         "title": "Write Comments for this Code",
         "group": "Donglao"
       },
       {
-        "command": "continue.writeDocstringForCode",
+        "command": "donglao.writeDocstringForCode",
         "category": "Donglao",
         "title": "Write a Docstring for this Code",
         "group": "Donglao"
       },
       {
-        "command": "continue.fixCode",
+        "command": "donglao.fixCode",
         "category": "Donglao",
         "title": "Fix this Code",
         "group": "Donglao"
       },
       {
-        "command": "continue.optimizeCode",
+        "command": "donglao.optimizeCode",
         "category": "Donglao",
         "title": "Optimize this Code",
         "group": "Donglao"
       },
       {
-        "command": "continue.fixGrammar",
+        "command": "donglao.fixGrammar",
         "category": "Donglao",
         "title": "Fix Grammar / Spelling",
         "group": "Donglao"
       },
       {
-        "command": "continue.codebaseForceReIndex",
+        "command": "donglao.codebaseForceReIndex",
         "category": "Donglao",
         "title": "Codebase Force Re-Index",
         "group": "Donglao"
       },
       {
-        "command": "continue.rebuildCodebaseIndex",
+        "command": "donglao.rebuildCodebaseIndex",
         "category": "Donglao",
         "title": "Rebuild codebase index",
         "group": "Donglao"
       },
       {
-        "command": "continue.docsIndex",
+        "command": "donglao.docsIndex",
         "category": "Donglao",
         "title": "Docs Index",
         "group": "Donglao"
       },
       {
-        "command": "continue.docsReIndex",
+        "command": "donglao.docsReIndex",
         "category": "Donglao",
         "title": "Docs Force Re-Index",
         "group": "Donglao"
       },
       {
-        "command": "continue.focusContinueInput",
+        "command": "donglao.focusDonglaoInput",
         "category": "Donglao",
         "title": "Focus Donglao Chat",
         "group": "Donglao"
       },
       {
-        "command": "continue.enterEnterpriseLicenseKey",
+        "command": "donglao.enterEnterpriseLicenseKey",
         "category": "Donglao",
         "title": "Enter Enterprise License Key",
         "group": "Donglao"
@@ -327,221 +327,221 @@
     ],
     "keybindings": [
       {
-        "command": "continue.focusContinueInput",
+        "command": "donglao.focusDonglaoInput",
         "mac": "cmd+l",
         "key": "ctrl+l"
       },
       {
-        "command": "continue.focusContinueInputWithoutClear",
+        "command": "donglao.focusDonglaoInputWithoutClear",
         "mac": "cmd+shift+l",
         "key": "ctrl+shift+l"
       },
       {
-        "command": "continue.acceptDiff",
+        "command": "donglao.acceptDiff",
         "mac": "shift+cmd+enter",
         "key": "shift+ctrl+enter",
-        "when": "continue.diffVisible"
+        "when": "donglao.diffVisible"
       },
       {
-        "command": "continue.rejectDiff",
+        "command": "donglao.rejectDiff",
         "mac": "shift+cmd+backspace",
         "key": "shift+ctrl+backspace",
-        "when": "continue.diffVisible"
+        "when": "donglao.diffVisible"
       },
       {
-        "command": "continue.rejectDiff",
+        "command": "donglao.rejectDiff",
         "mac": "cmd+z",
         "key": "ctrl+z",
-        "when": "continue.diffVisible"
+        "when": "donglao.diffVisible"
       },
       {
-        "command": "continue.quickEditHistoryUp",
+        "command": "donglao.quickEditHistoryUp",
         "mac": "up",
         "key": "up",
-        "when": "false && continue.quickEditHistoryFocused"
+        "when": "false && donglao.quickEditHistoryFocused"
       },
       {
-        "command": "continue.quickEditHistoryDown",
+        "command": "donglao.quickEditHistoryDown",
         "mac": "down",
         "key": "down",
-        "when": "false && continue.quickEditHistoryFocused"
+        "when": "false && donglao.quickEditHistoryFocused"
       },
       {
-        "command": "continue.acceptVerticalDiffBlock",
+        "command": "donglao.acceptVerticalDiffBlock",
         "mac": "alt+cmd+y",
         "key": "alt+ctrl+y"
       },
       {
-        "command": "continue.rejectVerticalDiffBlock",
+        "command": "donglao.rejectVerticalDiffBlock",
         "mac": "alt+cmd+n",
         "key": "alt+ctrl+n"
       },
       {
-        "command": "continue.focusEdit",
+        "command": "donglao.focusEdit",
         "title": "Edit code with natural language",
         "mac": "cmd+i",
         "key": "ctrl+i"
       },
       {
-        "command": "continue.exitEditMode",
+        "command": "donglao.exitEditMode",
         "mac": "escape",
         "key": "escape",
-        "when": "continue.inEditMode && editorFocus"
+        "when": "donglao.inEditMode && editorFocus"
       },
       {
-        "command": "continue.debugTerminal",
+        "command": "donglao.debugTerminal",
         "mac": "cmd+shift+r",
         "key": "ctrl+shift+r"
       },
       {
-        "command": "continue.toggleFullScreen",
+        "command": "donglao.toggleFullScreen",
         "mac": "cmd+k cmd+m",
         "key": "ctrl+k ctrl+m",
         "when": "!terminalFocus"
       },
       {
-        "command": "continue.toggleTabAutocompleteEnabled",
+        "command": "donglao.toggleTabAutocompleteEnabled",
         "mac": "cmd+k cmd+a",
         "key": "ctrl+k ctrl+a",
         "when": "!terminalFocus"
       },
       {
-        "command": "continue.forceAutocomplete",
+        "command": "donglao.forceAutocomplete",
         "key": "ctrl+alt+space",
         "mac": "cmd+alt+space",
         "when": "editorTextFocus && !editorHasSelection && !editorReadOnly && !inSnippetMode"
       },
       {
-        "command": "continue.applyCodeFromChat",
+        "command": "donglao.applyCodeFromChat",
         "mac": "alt+a",
         "key": "alt+a"
       }
     ],
     "submenus": [
       {
-        "id": "continue.continueSubMenu",
+        "id": "donglao.donglaoSubMenu",
         "label": "Donglao"
       }
     ],
     "menus": {
       "commandPalette": [
         {
-          "command": "continue.focusContinueInput"
+          "command": "donglao.focusDonglaoInput"
         },
         {
-          "command": "continue.focusContinueInputWithoutClear"
+          "command": "donglao.focusDonglaoInputWithoutClear"
         },
         {
-          "command": "continue.debugTerminal"
+          "command": "donglao.debugTerminal"
         },
         {
-          "command": "continue.toggleFullScreen"
+          "command": "donglao.toggleFullScreen"
         },
         {
-          "command": "continue.newSession"
+          "command": "donglao.newSession"
         },
         {
-          "command": "continue.enterEnterpriseLicenseKey"
+          "command": "donglao.enterEnterpriseLicenseKey"
         }
       ],
       "editor/context": [
         {
-          "submenu": "continue.continueSubMenu",
-          "group": "0_acontinue"
+          "submenu": "donglao.donglaoSubMenu",
+          "group": "0_adonglao"
         }
       ],
       "editor/title/run": [
         {
-          "command": "continue.rejectDiff",
+          "command": "donglao.rejectDiff",
           "group": "Donglao",
-          "when": "continue.streamingDiff"
+          "when": "donglao.streamingDiff"
         }
       ],
-      "continue.continueSubMenu": [
+      "donglao.donglaoSubMenu": [
         {
-          "command": "continue.focusContinueInputWithoutClear",
+          "command": "donglao.focusDonglaoInputWithoutClear",
           "group": "Donglao",
           "when": "editorHasSelection"
         },
         {
-          "command": "continue.focusEdit",
+          "command": "donglao.focusEdit",
           "group": "Donglao",
           "when": "editorHasSelection && !editorReadonly"
         },
         {
-          "command": "continue.writeCommentsForCode",
+          "command": "donglao.writeCommentsForCode",
           "group": "Donglao",
           "when": "editorHasSelection && !editorReadonly"
         },
         {
-          "command": "continue.writeDocstringForCode",
+          "command": "donglao.writeDocstringForCode",
           "group": "Donglao",
           "when": "editorHasSelection && !editorReadonly"
         },
         {
-          "command": "continue.fixCode",
+          "command": "donglao.fixCode",
           "group": "Donglao",
           "when": "editorHasSelection && !editorReadonly"
         },
         {
-          "command": "continue.optimizeCode",
+          "command": "donglao.optimizeCode",
           "group": "Donglao",
           "when": "editorHasSelection && !editorReadonly"
         },
         {
-          "command": "continue.fixGrammar",
+          "command": "donglao.fixGrammar",
           "group": "Donglao",
           "when": "editorHasSelection && editorLangId == 'markdown' && !editorReadonly"
         }
       ],
       "explorer/context": [
         {
-          "command": "continue.selectFilesAsContext",
+          "command": "donglao.selectFilesAsContext",
           "group": "1_debug@1"
         }
       ],
       "view/title": [
         {
-          "command": "continue.newSession",
+          "command": "donglao.newSession",
           "group": "navigation@1",
-          "when": "view == continue.continueGUIView"
+          "when": "view == donglao.donglaoGUIView"
         },
         {
-          "command": "continue.viewHistory",
+          "command": "donglao.viewHistory",
           "group": "navigation@2",
-          "when": "view == continue.continueGUIView"
+          "when": "view == donglao.donglaoGUIView"
         },
         {
-          "command": "continue.toggleFullScreen",
+          "command": "donglao.toggleFullScreen",
           "group": "navigation@3",
-          "when": "view == continue.continueGUIView"
+          "when": "view == donglao.donglaoGUIView"
         },
         {
-          "command": "continue.openConfigPage",
+          "command": "donglao.openConfigPage",
           "group": "navigation@4",
-          "when": "view == continue.continueGUIView"
+          "when": "view == donglao.donglaoGUIView"
         },
         {
-          "command": "continue.clearConsole",
+          "command": "donglao.clearConsole",
           "group": "navigation@1",
-          "when": "view == continue.continueConsoleView"
+          "when": "view == donglao.donglaoConsoleView"
         }
       ],
       "editor/title": [
         {
-          "command": "continue.newSession",
+          "command": "donglao.newSession",
           "group": "navigation@1",
-          "when": "activeWebviewPanelId == continue.continueGUIView"
+          "when": "activeWebviewPanelId == donglao.donglaoGUIView"
         },
         {
-          "command": "continue.viewHistory",
+          "command": "donglao.viewHistory",
           "group": "navigation@2",
-          "when": "activeWebviewPanelId == continue.continueGUIView"
+          "when": "activeWebviewPanelId == donglao.donglaoGUIView"
         }
       ],
       "terminal/context": [
         {
-          "command": "continue.debugTerminal",
+          "command": "donglao.debugTerminal",
           "group": "navigation@top"
         }
       ]
@@ -549,37 +549,37 @@
     "viewsContainers": {
       "activitybar": [
         {
-          "id": "continue",
+          "id": "donglao",
           "title": "Donglao",
           "icon": "media/sidebar-icon.png"
         }
       ],
       "panel": [
         {
-          "id": "continueConsole",
-          "title": "Continue Console",
+          "id": "donglaoConsole",
+          "title": "Donglao Console",
           "icon": "$(window)"
         }
       ]
     },
     "views": {
-      "continue": [
+      "donglao": [
         {
           "type": "webview",
-          "id": "continue.continueGUIView",
+          "id": "donglao.donglaoGUIView",
           "name": "Donglao",
           "icon": "media/sidebar-icon.png",
           "visibility": "visible"
         }
       ],
-      "continueConsole": [
+      "donglaoConsole": [
         {
           "type": "webview",
-          "id": "continue.continueConsoleView",
+          "id": "donglao.donglaoConsoleView",
           "name": "Donglao Console",
           "icon": "$(window)",
           "visibility": "visible",
-          "when": "config.continue.enableConsole"
+          "when": "config.donglao.enableConsole"
         }
       ]
     },

@@ -47,7 +47,7 @@ let fullScreenPanel: vscode.WebviewPanel | undefined;
 function getFullScreenTab() {
   const tabs = vscode.window.tabGroups.all.flatMap((tabGroup) => tabGroup.tabs);
   return tabs.find((tab) =>
-    (tab.input as any)?.viewType?.endsWith("continue.continueGUIView"),
+    (tab.input as any)?.viewType?.endsWith("donglao.donglaoGUIView"),
   );
 }
 
@@ -70,7 +70,7 @@ function focusGUI() {
     fullScreenPanel?.reveal();
   } else {
     // focus sidebar
-    vscode.commands.executeCommand("continue.continueGUIView.focus");
+    vscode.commands.executeCommand("donglao.donglaoGUIView.focus");
     // vscode.commands.executeCommand("workbench.action.focusAuxiliaryBar");
   }
 }
@@ -177,7 +177,7 @@ const getCommandsMap: (
   }
 
   return {
-    "continue.acceptDiff": async (newFileUri?: string, streamId?: string) => {
+    "donglao.acceptDiff": async (newFileUri?: string, streamId?: string) => {
       captureCommandTelemetry("acceptDiff");
       void processDiff(
         "accept",
@@ -190,7 +190,7 @@ const getCommandsMap: (
       );
     },
 
-    "continue.rejectDiff": async (newFileUri?: string, streamId?: string) => {
+    "donglao.rejectDiff": async (newFileUri?: string, streamId?: string) => {
       captureCommandTelemetry("rejectDiff");
       void processDiff(
         "reject",
@@ -202,15 +202,15 @@ const getCommandsMap: (
         streamId,
       );
     },
-    "continue.acceptVerticalDiffBlock": (fileUri?: string, index?: number) => {
+    "donglao.acceptVerticalDiffBlock": (fileUri?: string, index?: number) => {
       captureCommandTelemetry("acceptVerticalDiffBlock");
       verticalDiffManager.acceptRejectVerticalDiffBlock(true, fileUri, index);
     },
-    "continue.rejectVerticalDiffBlock": (fileUri?: string, index?: number) => {
+    "donglao.rejectVerticalDiffBlock": (fileUri?: string, index?: number) => {
       captureCommandTelemetry("rejectVerticalDiffBlock");
       verticalDiffManager.acceptRejectVerticalDiffBlock(false, fileUri, index);
     },
-    "continue.quickFix": async (
+    "donglao.quickFix": async (
       range: vscode.Range,
       diagnosticMessage: string,
     ) => {
@@ -220,14 +220,14 @@ const getCommandsMap: (
 
       addCodeToContextFromRange(range, sidebar.webviewProtocol, prompt);
 
-      vscode.commands.executeCommand("continue.continueGUIView.focus");
+      vscode.commands.executeCommand("donglao.donglaoGUIView.focus");
     },
     // Passthrough for telemetry purposes
-    "continue.defaultQuickAction": async (args: QuickEditShowParams) => {
+    "donglao.defaultQuickAction": async (args: QuickEditShowParams) => {
       captureCommandTelemetry("defaultQuickAction");
-      vscode.commands.executeCommand("continue.focusEdit", args);
+      vscode.commands.executeCommand("donglao.focusEdit", args);
     },
-    "continue.customQuickActionSendToChat": async (
+    "donglao.customQuickActionSendToChat": async (
       prompt: string,
       range: vscode.Range,
     ) => {
@@ -235,9 +235,9 @@ const getCommandsMap: (
 
       addCodeToContextFromRange(range, sidebar.webviewProtocol, prompt);
 
-      vscode.commands.executeCommand("continue.continueGUIView.focus");
+      vscode.commands.executeCommand("donglao.donglaoGUIView.focus");
     },
-    "continue.customQuickActionStreamInlineEdit": async (
+    "donglao.customQuickActionStreamInlineEdit": async (
       prompt: string,
       range: vscode.Range,
     ) => {
@@ -245,19 +245,19 @@ const getCommandsMap: (
 
       streamInlineEdit("docstring", prompt, false, range);
     },
-    "continue.codebaseForceReIndex": async () => {
+    "donglao.codebaseForceReIndex": async () => {
       core.invoke("index/forceReIndex", undefined);
     },
-    "continue.rebuildCodebaseIndex": async () => {
+    "donglao.rebuildCodebaseIndex": async () => {
       core.invoke("index/forceReIndex", { shouldClearIndexes: true });
     },
-    "continue.docsIndex": async () => {
+    "donglao.docsIndex": async () => {
       core.invoke("context/indexDocs", { reIndex: false });
     },
-    "continue.docsReIndex": async () => {
+    "donglao.docsReIndex": async () => {
       core.invoke("context/indexDocs", { reIndex: true });
     },
-    "continue.focusContinueInput": async () => {
+    "donglao.focusDonglaoInput": async () => {
       const isContinueInputFocused = await sidebar.webviewProtocol.request(
         "isContinueInputFocused",
         undefined,
@@ -301,7 +301,7 @@ const getCommandsMap: (
         void addHighlightedCodeToContext(sidebar.webviewProtocol);
       }
     },
-    "continue.focusContinueInputWithoutClear": async () => {
+    "donglao.focusDonglaoInputWithoutClear": async () => {
       const isContinueInputFocused = await sidebar.webviewProtocol.request(
         "isContinueInputFocused",
         undefined,
@@ -334,17 +334,17 @@ const getCommandsMap: (
     },
     // QuickEditShowParams are passed from CodeLens, temp fix
     // until we update to new params specific to Edit
-    "continue.focusEdit": async (args?: QuickEditShowParams) => {
+    "donglao.focusEdit": async (args?: QuickEditShowParams) => {
       captureCommandTelemetry("focusEdit");
       focusGUI();
       sidebar.webviewProtocol?.request("focusEdit", undefined);
     },
-    "continue.exitEditMode": async () => {
+    "donglao.exitEditMode": async () => {
       captureCommandTelemetry("exitEditMode");
       editDecorationManager.clear();
       void sidebar.webviewProtocol?.request("exitEditMode", undefined);
     },
-    "continue.writeCommentsForCode": async () => {
+    "donglao.writeCommentsForCode": async () => {
       captureCommandTelemetry("writeCommentsForCode");
 
       streamInlineEdit(
@@ -352,7 +352,7 @@ const getCommandsMap: (
         "Write comments for this code. Do not change anything about the code itself.",
       );
     },
-    "continue.writeDocstringForCode": async () => {
+    "donglao.writeDocstringForCode": async () => {
       captureCommandTelemetry("writeDocstringForCode");
 
       streamInlineEdit(
@@ -361,7 +361,7 @@ const getCommandsMap: (
         true,
       );
     },
-    "continue.fixCode": async () => {
+    "donglao.fixCode": async () => {
       captureCommandTelemetry("fixCode");
 
       streamInlineEdit(
@@ -369,57 +369,55 @@ const getCommandsMap: (
         "Fix this code. If it is already 100% correct, simply rewrite the code.",
       );
     },
-    "continue.optimizeCode": async () => {
+    "donglao.optimizeCode": async () => {
       captureCommandTelemetry("optimizeCode");
       streamInlineEdit("optimize", "Optimize this code");
     },
-    "continue.fixGrammar": async () => {
+    "donglao.fixGrammar": async () => {
       captureCommandTelemetry("fixGrammar");
       streamInlineEdit(
         "fixGrammar",
         "If there are any grammar or spelling mistakes in this writing, fix them. Do not make other large changes to the writing.",
       );
     },
-    "continue.clearConsole": async () => {
+    "donglao.clearConsole": async () => {
       consoleView.clearLog();
     },
-    "continue.viewLogs": async () => {
+    "donglao.viewLogs": async () => {
       captureCommandTelemetry("viewLogs");
       vscode.commands.executeCommand("workbench.action.toggleDevTools");
     },
-    "continue.debugTerminal": async () => {
+    "donglao.debugTerminal": async () => {
       captureCommandTelemetry("debugTerminal");
 
       const terminalContents = await ide.getTerminalContents();
 
-      vscode.commands.executeCommand("continue.continueGUIView.focus");
+      vscode.commands.executeCommand("donglao.donglaoGUIView.focus");
 
       sidebar.webviewProtocol?.request("userInput", {
         input: `I got the following error, can you please help explain how to fix it?\n\n${terminalContents.trim()}`,
       });
     },
-    "continue.hideInlineTip": () => {
+    "donglao.hideInlineTip": () => {
       vscode.workspace
         .getConfiguration(EXTENSION_NAME)
         .update("showInlineTip", false, vscode.ConfigurationTarget.Global);
     },
 
     // Commands without keyboard shortcuts
-    "continue.addModel": () => {
+    "donglao.addModel": () => {
       captureCommandTelemetry("addModel");
 
-      vscode.commands.executeCommand("continue.continueGUIView.focus");
+      vscode.commands.executeCommand("donglao.donglaoGUIView.focus");
       sidebar.webviewProtocol?.request("addModel", undefined);
     },
-    "continue.newSession": () => {
+    "donglao.newSession": () => {
       sidebar.webviewProtocol?.request("newSession", undefined);
     },
-    "continue.viewHistory": () => {
-      vscode.commands.executeCommand("continue.navigateTo", "/history", true);
+    "donglao.viewHistory": () => {
+      vscode.commands.executeCommand("donglao.navigateTo", "/history", true);
     },
-    "continue.focusContinueSessionId": async (
-      sessionId: string | undefined,
-    ) => {
+    "donglao.focusDonglaoSessionId": async (sessionId: string | undefined) => {
       if (!sessionId) {
         sessionId = await vscode.window.showInputBox({
           prompt: "Enter the Session ID",
@@ -429,10 +427,10 @@ const getCommandsMap: (
         sessionId,
       });
     },
-    "continue.applyCodeFromChat": () => {
+    "donglao.applyCodeFromChat": () => {
       void sidebar.webviewProtocol.request("applyCodeFromChat", undefined);
     },
-    "continue.toggleFullScreen": async () => {
+    "donglao.toggleFullScreen": async () => {
       focusGUI();
 
       const sessionId = await sidebar.webviewProtocol.request(
@@ -449,14 +447,14 @@ const getCommandsMap: (
       }
 
       // Clear the sidebar to prevent overwriting changes made in fullscreen
-      vscode.commands.executeCommand("continue.newSession");
+      vscode.commands.executeCommand("donglao.newSession");
 
       // Full screen not open - open it
       captureCommandTelemetry("openFullScreen");
 
       // Create the full screen panel
       let panel = vscode.window.createWebviewPanel(
-        "continue.continueGUIView",
+        "donglao.donglaoGUIView",
         "Donglao",
         vscode.ViewColumn.One,
         {
@@ -476,10 +474,10 @@ const getCommandsMap: (
       );
 
       const sessionLoader = panel.onDidChangeViewState(() => {
-        vscode.commands.executeCommand("continue.newSession");
+        vscode.commands.executeCommand("donglao.newSession");
         if (sessionId) {
           vscode.commands.executeCommand(
-            "continue.focusContinueSessionId",
+            "donglao.focusDonglaoSessionId",
             sessionId,
           );
         }
@@ -491,7 +489,7 @@ const getCommandsMap: (
       panel.onDidDispose(
         () => {
           sidebar.resetWebviewProtocolWebview();
-          vscode.commands.executeCommand("continue.focusContinueInput");
+          vscode.commands.executeCommand("donglao.focusDonglaoInput");
         },
         null,
         extensionContext.subscriptions,
@@ -500,10 +498,10 @@ const getCommandsMap: (
       vscode.commands.executeCommand("workbench.action.copyEditorToNewWindow");
       vscode.commands.executeCommand("workbench.action.closeAuxiliaryBar");
     },
-    "continue.openConfigPage": () => {
-      vscode.commands.executeCommand("continue.navigateTo", "/config", false);
+    "donglao.openConfigPage": () => {
+      vscode.commands.executeCommand("donglao.navigateTo", "/config", false);
     },
-    "continue.selectFilesAsContext": async (
+    "donglao.selectFilesAsContext": async (
       firstUri: vscode.Uri,
       uris: vscode.Uri[],
     ) => {
@@ -511,7 +509,7 @@ const getCommandsMap: (
         throw new Error("No files were selected");
       }
 
-      vscode.commands.executeCommand("continue.continueGUIView.focus");
+      vscode.commands.executeCommand("donglao.donglaoGUIView.focus");
 
       for (const uri of uris) {
         // If it's a folder, add the entire folder contents recursively by using walkDir (to ignore ignored files)
@@ -537,13 +535,13 @@ const getCommandsMap: (
         }
       }
     },
-    "continue.logAutocompleteOutcome": (
+    "donglao.logAutocompleteOutcome": (
       completionId: string,
       completionProvider: CompletionProvider,
     ) => {
       completionProvider.accept(completionId);
     },
-    "continue.toggleTabAutocompleteEnabled": () => {
+    "donglao.toggleTabAutocompleteEnabled": () => {
       captureCommandTelemetry("toggleTabAutocompleteEnabled");
 
       const config = vscode.workspace.getConfiguration(EXTENSION_NAME);
@@ -579,7 +577,7 @@ const getCommandsMap: (
         }
       }
     },
-    "continue.forceAutocomplete": async () => {
+    "donglao.forceAutocomplete": async () => {
       captureCommandTelemetry("forceAutocomplete");
 
       // 1. Explicitly hide any existing suggestion. This clears VS Code's cache for the current position.
@@ -591,7 +589,7 @@ const getCommandsMap: (
       );
     },
 
-    "continue.openTabAutocompleteConfigMenu": async () => {
+    "donglao.openTabAutocompleteConfigMenu": async () => {
       captureCommandTelemetry("openTabAutocompleteConfigMenu");
 
       const config = vscode.workspace.getConfiguration(EXTENSION_NAME);
@@ -677,25 +675,25 @@ const getCommandsMap: (
             });
           }
         } else if (selectedOption === "$(comment) Open chat") {
-          vscode.commands.executeCommand("continue.focusContinueInput");
+          vscode.commands.executeCommand("donglao.focusDonglaoInput");
         } else if (selectedOption === "$(screen-full) Open full screen chat") {
-          vscode.commands.executeCommand("continue.toggleFullScreen");
+          vscode.commands.executeCommand("donglao.toggleFullScreen");
         } else if (selectedOption === "$(gear) Open settings") {
-          vscode.commands.executeCommand("continue.navigateTo", "/config");
+          vscode.commands.executeCommand("donglao.navigateTo", "/config");
         }
 
         quickPick.dispose();
       });
       quickPick.show();
     },
-    "continue.navigateTo": (path: string, toggle: boolean) => {
+    "donglao.navigateTo": (path: string, toggle: boolean) => {
       sidebar.webviewProtocol?.request("navigateTo", { path, toggle });
       focusGUI();
     },
-    "continue.startLocalOllama": () => {
+    "donglao.startLocalOllama": () => {
       startLocalOllama(ide);
     },
-    "continue.installModel": async (
+    "donglao.installModel": async (
       modelName: string,
       llmProvider: ILLM | undefined,
     ) => {
@@ -714,7 +712,7 @@ const getCommandsMap: (
         );
       }
     },
-    "continue.convertConfigJsonToConfigYaml": async () => {
+    "donglao.convertConfigJsonToConfigYaml": async () => {
       const configJson = fs.readFileSync(getConfigJsonPath(), "utf-8");
       const parsed = JSON.parse(configJson);
       const configYaml = convertJsonToYamlConfig(parsed);
@@ -743,7 +741,7 @@ const getCommandsMap: (
           }
         });
     },
-    "continue.enterEnterpriseLicenseKey": async () => {
+    "donglao.enterEnterpriseLicenseKey": async () => {
       captureCommandTelemetry("enterEnterpriseLicenseKey");
 
       const licenseKey = await vscode.window.showInputBox({
@@ -804,7 +802,7 @@ const registerCopyBufferService = (
       });
     }
 
-    await context.workspaceState.update("continue.copyBuffer", {
+    await context.workspaceState.update("donglao.copyBuffer", {
       text: clipboardText,
       copiedAt: new Date().toISOString(),
     });

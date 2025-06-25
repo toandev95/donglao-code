@@ -302,7 +302,7 @@ export class ContinueCompletionProvider
         range,
         {
           title: "Log Autocomplete Outcome",
-          command: "continue.logAutocompleteOutcome",
+          command: "donglao.logAutocompleteOutcome",
           arguments: [input.completionId, this.completionProvider],
         },
       );

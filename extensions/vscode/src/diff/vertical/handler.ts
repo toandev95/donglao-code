@@ -9,8 +9,8 @@ import {
   indexDecorationType,
 } from "./decorations";
 
-import type { VerticalDiffCodeLens } from "./manager";
 import type { ApplyState, DiffLine } from "core";
+import type { VerticalDiffCodeLens } from "./manager";
 
 export interface VerticalDiffHandlerOptions {
   input?: string;
@@ -90,7 +90,7 @@ export class VerticalDiffHandler implements vscode.Disposable {
   async clear(accept: boolean) {
     vscode.commands.executeCommand(
       "setContext",
-      "continue.streamingDiff",
+      "donglao.streamingDiff",
       false,
     );
 
