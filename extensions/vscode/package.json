@@ -4,11 +4,17 @@
   "author": "Toan Doan",
   "version": "1.0.4",
   "repository": "https://github.com/toandev95/Donglao",
-  "homepage": "https://donglao.io.vn",
   "extensionKind": [
     "ui",
     "workspace"
   ],
+  "bugs": {
+    "url": "https://github.com/toandev95/Donglao/issues",
+    "email": "toandev.95@gmail.com"
+  },
+  "homepage": "https://donglao.io.vn",
+  "qna": "https://github.com/toandev95/Donglao/issues/new/choose",
+  "license": "Apache-2.0",
   "displayName": "Donglao Code",
   "pricing": "Free",
   "description": "Your AI Pair Programmer, Built by the Community.",
