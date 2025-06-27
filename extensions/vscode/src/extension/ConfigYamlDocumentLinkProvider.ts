@@ -26,7 +26,7 @@ export class ConfigYamlDocumentLinkProvider
 
         const link = new vscode.DocumentLink(
           range,
-          vscode.Uri.parse(`https://hub.continue.dev/${slug}`),
+          vscode.Uri.parse(`https://code.donglao.io.vn/hub/${slug}`),
         );
         links.push(link);
       }

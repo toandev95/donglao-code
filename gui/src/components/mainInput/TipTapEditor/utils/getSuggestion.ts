@@ -169,7 +169,7 @@ export function getContextProviderDropdownOptions(
         action: () => {
           ideMessenger.post(
             "openUrl",
-            "https://docs.continue.dev/customization/context-providers#built-in-context-providers",
+            "https://code.donglao.io.vn/docs/customization/context-providers#built-in-context-providers",
           );
         },
         description: "",
@@ -231,7 +231,7 @@ export function getSlashCommandDropdownOptions(
         action: () =>
           ideMessenger.post(
             "openUrl",
-            "https://hub.continue.dev/explore/prompts",
+            "https://code.donglao.io.vn/hub/explore/prompts",
           ),
         description: "",
         name: "",
