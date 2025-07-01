@@ -74,9 +74,9 @@ const SVG_CONFIG = {
 
 // Command ID - can be used in package.json
 export const HIDE_NEXT_EDIT_SUGGESTION_COMMAND =
-  "continue.nextEditWindow.hideNextEditSuggestion";
+  "donglao.nextEditWindow.hideNextEditSuggestion";
 export const ACCEPT_NEXT_EDIT_SUGGESTION_COMMAND =
-  "continue.nextEditWindow.acceptNextEditSuggestion";
+  "donglao.nextEditWindow.acceptNextEditSuggestion";
 
 export class NextEditWindowManager {
   private static instance: NextEditWindowManager | undefined;
@@ -199,8 +199,8 @@ export class NextEditWindowManager {
    */
   private registerCommandSafely(
     commandId:
-      | "continue.nextEditWindow.hideNextEditSuggestion"
-      | "continue.nextEditWindow.acceptNextEditSuggestion",
+      | "donglao.nextEditWindow.hideNextEditSuggestion"
+      | "donglao.nextEditWindow.acceptNextEditSuggestion",
     callback: () => Promise<void>,
   ) {
     if (!this.context) {

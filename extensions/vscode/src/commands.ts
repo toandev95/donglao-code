@@ -777,7 +777,7 @@ const getCommandsMap: (
         );
       }
     },
-    "continue.forceNextEdit": async () => {
+    "donglao.forceNextEdit": async () => {
       captureCommandTelemetry("forceNextEdit");
 
       // This is basically the same logic as forceAutocomplete.

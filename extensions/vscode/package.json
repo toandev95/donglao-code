@@ -438,12 +438,12 @@
         "key": "alt+a"
       },
       {
-        "command": "continue.nextEditWindow.hideNextEditSuggestion",
+        "command": "donglao.nextEditWindow.hideNextEditSuggestion",
         "key": "escape",
         "when": "editorTextFocus && nextEditWindowActive"
       },
       {
-        "command": "continue.nextEditWindow.acceptNextEditSuggestion",
+        "command": "donglao.nextEditWindow.acceptNextEditSuggestion",
         "key": "tab",
         "when": "editorTextFocus && nextEditWindowActive"
       }
