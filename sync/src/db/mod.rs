@@ -104,7 +104,7 @@ pub fn add_chunk(chunk: Chunk, tags: Vec<String>) {
 
     for tag in tags {
         conn.execute(
-            "INSERT INTO tags (chunk_hash, tag) VALUES (?1, ?2)",
+            "INSERT OR IGNORE INTO tags (chunk_hash, tag) VALUES (?1, ?2)",
             (&chunk.hash, &tag),
         )
         .unwrap();
@@ -125,7 +125,7 @@ pub fn add_tag(hash: String, tag: String) {
     let conn = get_conn();
 
     conn.execute(
-        "INSERT INTO tags (chunk_hash, tag) VALUES (?1, ?2)",
+        "INSERT OR IGNORE INTO tags (chunk_hash, tag) VALUES (?1, ?2)",
         (&hash, &tag),
     )
     .unwrap();
