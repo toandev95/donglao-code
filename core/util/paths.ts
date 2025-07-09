@@ -144,9 +144,9 @@ export function getConfigTsPath(): string {
     fs.writeFileSync(
       packageJsonPath,
       JSON.stringify({
-        name: "continue-config",
+        name: "donglao-config",
         version: "1.0.0",
-        description: "My Continue Configuration",
+        description: "My Donglao Configuration",
         main: "config.js",
       }),
     );
@@ -340,7 +340,7 @@ export function getPathToRemoteConfig(remoteConfigServerUrl: string): string {
       typeof remoteConfigServerUrl !== "string" || remoteConfigServerUrl === ""
         ? undefined
         : new URL(remoteConfigServerUrl);
-  } catch (e) { }
+  } catch (e) {}
   const dir = path.join(getRemoteConfigsFolderPath(), url?.hostname ?? "None");
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir);

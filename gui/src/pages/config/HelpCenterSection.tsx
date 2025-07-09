@@ -31,14 +31,14 @@ export function HelpCenterSection() {
           }
         />
 
-        <MoreHelpRow
+        {/* <MoreHelpRow
           title="Documentation"
           description="Learn how to configure and use Donglao Code"
           Icon={ArrowTopRightOnSquareIcon}
           onClick={() =>
-            ideMessenger.post("openUrl", "https://code.donglao.io.vn/docs")
+            ideMessenger.post("openUrl", "https://docs.continue.dev")
           }
-        />
+        /> */}
 
         <MoreHelpRow
           title="Have an issue?"
@@ -90,6 +90,7 @@ export function HelpCenterSection() {
             ideMessenger.post("showTutorial", undefined);
           }}
         />
+
         {process.env.NODE_ENV === "development" && (
           <MoreHelpRow
             title="Theme Test Page"

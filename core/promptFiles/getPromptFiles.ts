@@ -28,7 +28,7 @@ Analyze the project structure and key files to understand:
 - Build/deployment system
 
 ## Step 3: Generate CONTINUE.md
-Create a comprehensive CONTINUE.md file in the .continue/rules/ directory with the following sections:
+Create a comprehensive CONTINUE.md file in the .donglao/rules/ directory with the following sections:
 
 1. **Project Overview**
    - Brief description of the project's purpose
@@ -79,7 +79,7 @@ After creating the .continue/rules/CONTINUE.md file, provide a summary of what y
 
 Also inform the user that they can create additional rules.md files in subdirectories for more specific documentation related to those components.`;
 
-export const DEFAULT_PROMPTS_FOLDER_V2 = ".continue/prompts";
+export const DEFAULT_PROMPTS_FOLDER_V2 = ".donglao/prompts";
 
 export async function getPromptFilesFromDir(
   ide: IDE,
