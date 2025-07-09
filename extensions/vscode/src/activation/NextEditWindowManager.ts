@@ -342,7 +342,7 @@ export class NextEditWindowManager {
 
     // Log with accept = false.
     await vscode.commands.executeCommand(
-      "continue.logNextEditOutcomeReject",
+      "donglao.logNextEditOutcomeReject",
       this.mostRecentCompletionId,
       this.loggingService,
     );
@@ -418,7 +418,7 @@ export class NextEditWindowManager {
 
     // Log with accept = true.
     await vscode.commands.executeCommand(
-      "continue.logNextEditOutcomeAccept",
+      "donglao.logNextEditOutcomeAccept",
       this.mostRecentCompletionId,
       this.loggingService,
     );

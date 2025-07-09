@@ -401,7 +401,7 @@ export class ContinueCompletionProvider
             ),
             {
               title: "Log Next Edit Outcome",
-              command: "continue.logNextEditOutcomeAccept",
+              command: "donglao.logNextEditOutcomeAccept",
               arguments: [input.completionId, this.nextEditLoggingService], // TODO: this may have to be this.completionProvider.
             },
           );
