@@ -344,6 +344,12 @@
         "command": "donglao.forceNextEdit",
         "category": "Donglao",
         "title": "Donglao: Force Next Edit"
+      },
+      {
+        "command": "donglao.generateRule",
+        "category": "Donglao",
+        "title": "Generate Rule",
+        "group": "Donglao"
       }
     ],
     "keybindings": [
@@ -473,6 +479,9 @@
         },
         {
           "command": "donglao.enterEnterpriseLicenseKey"
+        },
+        {
+          "command": "donglao.generateRule"
         }
       ],
       "editor/context": [
