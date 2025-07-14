@@ -78,7 +78,7 @@ function getGlobPattern(
     return globs;
   }
   let dir = path.dirname(id.filePath);
-  if (dir.includes(".continue")) {
+  if (dir.includes(".donglao")) {
     return globs;
   }
   if (!dir.endsWith("/")) {
