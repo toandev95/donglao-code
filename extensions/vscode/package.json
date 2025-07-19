@@ -3,17 +3,17 @@
   "icon": "media/icon.png",
   "author": "Toan Doan",
   "version": "1.0.10",
-  "repository": "https://github.com/toandev95/Donglao",
+  "repository": "https://github.com/toandev95/donglao-code",
   "extensionKind": [
     "ui",
     "workspace"
   ],
   "bugs": {
-    "url": "https://github.com/toandev95/Donglao/issues",
+    "url": "https://github.com/toandev95/donglao-code/issues",
     "email": "toandev.95@gmail.com"
   },
-  "homepage": "https://donglao.io.vn",
-  "qna": "https://github.com/toandev95/Donglao/issues/new/choose",
+  "homepage": "https://code.donglao.io.vn",
+  "qna": "https://github.com/toandev95/donglao-code/issues/new/choose",
   "license": "Apache-2.0",
   "displayName": "Donglao Code",
   "pricing": "Free",
