@@ -2,7 +2,7 @@
   "name": "donglao",
   "icon": "media/icon.png",
   "author": "Toan Doan",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "repository": "https://github.com/toandev95/donglao-code",
   "extensionKind": [
     "ui",
