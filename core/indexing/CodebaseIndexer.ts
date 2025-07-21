@@ -692,13 +692,18 @@ export class CodebaseIndexer {
     }
   }
 
-  public async refreshCodebaseIndex(paths: string[]) {
+  public async refreshCodebaseIndex(paths: string[]): Promise<void> {
     if (this.indexingCancellationController) {
       this.indexingCancellationController.abort();
     }
     this.indexingCancellationController = new AbortController();
     for await (const update of this.waitForDBIndex()) {
       this.updateProgress(update);
+    }
+
+    if (!this.indexingCancellationController) {
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      return this.refreshCodebaseIndex(paths);
     }
 
     await IndexLock.lock(paths.join(", ")); // acquire the index lock to prevent multiple windows to begin indexing
